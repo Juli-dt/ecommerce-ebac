@@ -141,7 +141,7 @@ img {
   @extend %box-sizing;
   height: 100%;
   position: fixed;
-  right: -100%;
+  right: /*-100%;*/ 0;
   top: 100px;
   box-shadow: -19px -1px 22px -15px rgba(0, 0, 0, 0.30);
 
@@ -161,7 +161,7 @@ img {
     @extend %box-sizing;
 
     &-image {
-      @include responsive-image(60px);
+      @include responsive-image(35%);
     }
 
     &-description {
@@ -173,11 +173,11 @@ img {
     }
 
     &-delete {
-      @include responsive-image(25px);
+      @include responsive-image(35%);
       cursor: pointer;
 
       &-icon {
-        width: 100%;
+        width: 33%;
       }
     }
   }

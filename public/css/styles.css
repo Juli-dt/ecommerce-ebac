@@ -1,3 +1,17 @@
+.cart__title, .product, .banner {
+  text-align: center;
+}
+
+.cart__item, .cart__title, .cart, .products, .header, body {
+  box-sizing: border-box;
+}
+
+.cart__item, .header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 body {
   width: 100%;
   font-size: 15px;
@@ -5,20 +19,16 @@ body {
   color: #999;
   font-family: "Lexend", Arial, Helvetica, sans-serif;
   margin: 0;
-  box-sizing: border-box;
 }
-/* otro comentario para github */
+
 img {
   width: 100px;
 }
 
 .header {
   width: 100%;
-  padding: 20px 50px;
+  padding: 20px;
   background-color: #333;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   justify-content: space-between;
 }
 .header__icon {
@@ -26,17 +36,84 @@ img {
   cursor: pointer;
   display: inline-block;
 }
+.header__icon {
+  position: relative;
+}
+
+.cart-count {
+  position: absolute;
+  top: -10px; /* Ajusta según sea necesario */
+  right: -10px; /* Ajusta según sea necesario */
+  background-color: red;
+  color: white;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+}
+
 .header__icon img {
   width: 35px;
 }
 .header__logo {
-  width: 20px;
+  width: 50px;
+}
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: #333;
+}
+
+.menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  left: 0;
+  top: 60px;
+  background-color: #333;
+  width: 150px;
+  z-index: 999;
+  border-radius: 5px;
+  display: none; /* Oculto inicialmente */
+}
+
+.menu__close {
+  text-align: right;
+  padding: 10px;
+  cursor: pointer;
+  color: white;
+  background-color: #444;
+  font-size: 18px;
+}
+
+.menu__close:hover {
+  background-color: #555; /* Efecto hover para la "X" */
+}
+
+.menu li {
+  padding: 10px;
+  border-bottom: 1px solid #444;
+}
+
+.menu li a {
+  color: white;
+  text-decoration: none;
+  display: block;
+}
+
+.menu li a:hover {
+  background-color: #555;
 }
 
 .banner {
   width: 100%;
   padding: 60px 0;
-  text-align: center;
   background-image: url("../img/banner.png");
   background-repeat: no-repeat;
   background-size: cover;
@@ -44,13 +121,13 @@ img {
 }
 .banner__title {
   width: 100%;
+  margin: 0 auto;
   font-weight: 600;
   font-size: 30px;
-  margin: 10px;
+  margin: 0 auto;
 }
 .banner__description {
   width: 100%;
-  margin: 0 auto;
   font-size: 25px;
   opacity: 0.7;
 }
@@ -59,7 +136,6 @@ img {
   width: 80%;
   margin: 0 auto;
   padding: 20px;
-  box-sizing: border-box;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   align-items: baseline;
@@ -67,7 +143,7 @@ img {
 
 .product {
   cursor: pointer;
-  text-align: center;
+  margin-top: 10px;
 }
 .product__image {
   width: 200px;
@@ -82,36 +158,42 @@ img {
   font-weight: 300;
   font-size: 15px;
 }
+.product__add-to-cart {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.product__add-to-cart:hover {
+  background-color: #218838;
+}
 
 .cart {
   width: 300px;
   background-color: #fff;
   padding: 25px;
-  box-sizing: border-box;
   height: 100%;
   position: fixed;
-  right: -100%;
+  right: 0;
   top: 100px;
   box-shadow: -19px -1px 22px -15px rgba(0, 0, 0, 0.3);
 }
 .cart__title {
   width: 100%;
-  text-align: center;
   font-size: 20px;
   font-weight: 600;
   padding: 25px 0;
-  box-sizing: border-box;
 }
 .cart__item {
   border-bottom: 1px solid #333;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   padding: 15px;
-  box-sizing: border-box;
 }
 .cart__item-image {
-  width: 60px;
+  width: 35%;
 }
 .cart__item-description {
   margin: 0;
@@ -120,11 +202,11 @@ img {
   font-weight: 500;
 }
 .cart__item-delete {
-  width: 25px;
+  width: 35%;
   cursor: pointer;
 }
 .cart__item-delete-icon {
-  width: 100%;
+  width: 33%;
 }
 
 @media (max-width: 820px) {
